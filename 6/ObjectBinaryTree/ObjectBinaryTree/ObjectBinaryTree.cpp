@@ -106,7 +106,7 @@ public:
 
 	}
 
-	// Metoda publiczna do wyświetlania drzewa w porządku postorder
+	// Metoda publiczna sprawdzająca czy w drzewie istnieje podany element, przeszukując drzewo metodą inorder
 	bool isInTree(int value) {
 		return isInTree(root, value);
 	}
@@ -126,7 +126,7 @@ public:
 		return left_subtree_valid && right_subtree_valid;
 	}
 
-	// Metoda publiczna do wyświetlania drzewa w porządku postorder
+	// Metoda publiczna sprawdzająca, czy drzewo jest BST
 	bool isBST() {
 		return isBST(root);
 	}
@@ -189,6 +189,10 @@ int main() {
 
 	int node_value = 80;
 	std::string result = tree.isInTree(node_value) ? "" : " nie";
+	std::cout << "W drzewie binarnym" << result << " wystepuje wezel o wartosci " << node_value << std::endl;
+
+	node_value = 70;
+	result = tree.isInTree(node_value) ? "" : " nie";
 	std::cout << "W drzewie binarnym" << result << " wystepuje wezel o wartosci " << node_value << std::endl;
 
 	std::string is_bst = tree.isBST() ? "Drzewo jest drzewem BST" : "Drzewo nie jest drzewem BST";
